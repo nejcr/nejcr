@@ -63,12 +63,42 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+    html{
+        height: auto !important;
+    }
     :root {
         font-size: 14px;
+        text-align: left;
     }
     body {
         padding: var(--line-height) 1ch;
     }
+    .responsive-table tr {
+        display: block;
+    }
+
+    .responsive-table td {
+        display: block;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;;
+        border-bottom: none;
+    }
+    .responsive-table td:last-child {
+        border-bottom-style: solid;
+
+    }
+
+    .responsive-font-title {
+        font-size: 16px !important;
+    }
+    .responsive-font-subtitle {
+        font-size: 12px !important;
+    }
+    .responsive-nav {
+        font-size: 12px !important;
+    }
+
 }
 
 h1, h2, h3, h4, h5, h6 {
