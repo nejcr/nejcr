@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="styles/reset.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="me.png">
+    <title>Nejc Ravnik - Full Stack Software Engineer</title>
+
+</head>
+
+<body>
+<header style="display: flex; align-items: end; justify-content: space-between;">
+    <div style="display: flex;align-items: end">
+        <span style="font-weight: 800; font-size: x-large; margin-top: 2px;">Nejc Ravnik</span>
+        <span style="margin-inline: 5px">-</span>
+        <span style="font-size: 14px;margin: -1px">Full Stack Software Engineer</span>
+    </div>
+
+    <div>
+        <a href="/">/home</a>
+        <a href="/blog" style="color: gray;text-decoration: line-through;pointer-events: all !important;cursor: not-allowed">/blog</a>
+        <a href="/another-page">/cv</a>
+    </div>
+</header>
+
+<section class="about-me" style="text-align: justify;padding-top: 20px">
+    <img  src="me.png"  width="auto" height="180" style="width: fit-content;filter: sepia(1)">
+
+    <span class="nr-loader">▉▉▉▉▉ <span>About me</span> ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉<div>
+
+    <p>
+        > Hello, I am <strong>Nejc Ravnik</strong>. <br>
+        > I am quite obviously a programmer/engineer/developer or "tech-generalist".<br>
+        > Oh, and I've been doing it for the last <span id="yearsPrograming"></span> years.
+    </p>
+    <br>
+    <span>I ...</span>
+
+    <ul class="incremental">
+        <li>Live in <a style="font-size: 14px;" href="https://www.youtube.com/watch?v=cqB7_9nXUKU">Ljubljana (Slovenia)</a>, but I come from <a style="font-size: 14px;" href="https://www.youtube.com/watch?v=Iv-SvhjrCOQ">Bled (Slovenia)</a>.</li>
+        <li>Am passionate about team sports, especially if Slovenia is good at them.</li>
+        <li>Think dogs are the best thing that happened to planet Earth.</li>
+        <li>Am a big fan of statically typed languages.</li>
+        <li>Love my friends and family with all my heart 💛.</li>
+        <li>Plan to write a blog once, but I have it set up just in case.</li>
+        <li>Visit /r/wallstreetbets too often.</li>
+    </ul>
+</section>
+
+<span>I know a thing or two about:</span>
+<div style="margin-top: 4px;">
+    <strong>╰</strong>
+</div>
+<ul class="tree" style="padding-top: 2px; margin-top: -20px; margin-left: 10px;">
+    <li>
+        <p style="margin: 0;">
+            <span>/dev/me</span>
+        </p>
+        <ul class="incremental">
+            <li>Frontend
+                <ul class="incremental">
+                    <li>React
+                        <ul class="incremental">
+                            <li>Next.js</li>
+                            <li>Remix</li>
+                        </ul>
+                    </li>
+                    <li>TypeScript</li>
+                    <li>Shadcn</li>
+                    <li>Tailwind</li>
+                </ul>
+            </li>
+            <li>Backend
+                <ul class="incremental">
+                    <li>Java
+                        <ul class="incremental">
+                            <li>Spring Boot</li>
+                            <li>Quarkus</li>
+                        </ul>
+                    </li>
+                    <li>Python</li>
+                    <li>Node.js</li>
+                    <li>Bun.js</li>
+                    <li>SQL
+                        <ul class="incremental">
+                            <li>PostgreSQL</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </li>
+                    <li>NoSQL
+                        <ul class="incremental">
+                            <li>DynamoDB</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Cloud
+                <ul class="incremental">
+                    <li><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/MT2T2J2CLM4QQ936">AWS</a></li>
+                    <li>Azure</li>
+                    <li>Vercel</li>
+                    <li>Docker</li>
+                </ul>
+            </li>
+            <li>Misc
+                <ul class="incremental">
+                    <li>Bash</li>
+                    <li>GitHub & GitHub Actions</li>
+                    <li>CI/CD</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<br/>
+<br/>
+<table style="font-size: 14px;">
+    <tr>
+        <td>Email: <a href="mailto:ravnik.nejc@gmail.com">ravnik.nejc@gmail.com</a></td>
+        <td>Github: <a href="https://github.com/nejcr">nejcr</a></td>
+        <td>X: <a href="https://twitter.com/NejcRavnik">NejcRavnik</a></td>
+        <td><a href="https://www.linkedin.com/in/nejc-ravnik-92574088/">LinkedIn</a></td>
+    </tr>
+</table>
+
+<script>
+    // Get the current year
+    const currentYear = new Date().getFullYear();
+    // Calculate the number of years since 2015
+    const yearsPrograming = currentYear - 2015;
+    // Display the result in the <span> element
+    document.getElementById('yearsPrograming').textContent = yearsPrograming.toString();
+</script>
+
+</body>
+
+</html>
