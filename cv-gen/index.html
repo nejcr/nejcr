@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Nejc Ravnik - Software engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+          rel="stylesheet"/>
+</head>
+<body class="grid min-h-screen place-items-center bg-gray-400 print:min-h-0">
+<script type="module">
+
+
+    const {createApp, ref} = Vue;
+
+    import {config} from "./config.js";
+    import Info from '/components/Info.js'
+    import Section from '/components/Section.js'
+    import Experience from '/components/Experience.js'
+    import Education from "./components/Education.js";
+    import Skills from "./components/Skills.js";
+    import Certification from "./components/Certification.js";
+
+    const app = createApp({
+        el: '#app',
+        components: {Experience, Info, Skills, Education,Certification},
+        setup() {
+
+            function convertUrlToString(url) {
+                console.log(url)
+                let cleanedUrl = url.replace(/^https?:\/\//, "").replace(/^www\./, "");
+                if (cleanedUrl.endsWith("/")) {
+                    cleanedUrl = cleanedUrl.slice(0, -1);
+                }
+                return cleanedUrl;
+            }
+
+            const githubShort = ref(convertUrlToString(config.info.githubUrl))
+            const linkedinShort = ref(convertUrlToString(config.info.linkedInUrl))
+            const configuration = ref(config);
+
+            return {configuration, githubShort, linkedinShort};
+        },
+    });
+    app.component("cv-section", Section)
+    app.component('info', Info);
+    app.component('experience', Experience);
+    app.component('education', Education);
+    app.component('certification',Certification)
+    app.component('skills', Skills);
+
+    app.mount('#app');
+</script>
+<main id="app"
+      class="m-5 h-[297mm] w-[210mm] overflow-hidden rounded-md bg-white p-8 shadow-lg print:m-0 print:h-screen print:w-screen print:rounded-none print:shadow-none">
+    <info :info="configuration.info" :linkedin-short="linkedinShort" :github-short="githubShort"></info>
+
+    <div class="mt-7">
+        <cv-section title="Professional Experience"></cv-section>
+        <experience v-for="(experience,index) in configuration.experiences" :experience="experience" :show-hr="index!==configuration.experiences.length-1"
+                    :key="experience.company"></experience>
+
+        <education></education>
+        <certification></certification>
+        <skills></skills>
+    </div>
+</main>
+</body>
+</html>
